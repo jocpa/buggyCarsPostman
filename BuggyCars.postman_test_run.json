@@ -1,0 +1,77 @@
+{
+	"id": "e66d173b-2d68-4fd1-bbea-3158243851f8",
+	"name": "BuggyCars",
+	"timestamp": "2023-06-19T17:31:50.221Z",
+	"collection_id": "25854527-c51f1728-9853-4431-ba26-844fe6a5041d",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 4,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-06-19T17:31:45.203Z",
+	"totalFail": 1,
+	"results": [
+		{
+			"id": "63d9047e-d898-4d5e-bd89-257a6ff8b90e",
+			"name": "Prueba de carros",
+			"url": "https://k51qryqov3.execute-api.ap-southeast-2.amazonaws.com/prod/models?page=1",
+			"time": 4029,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 200ms": false,
+				"Debe tener cinco paginas": true,
+				"Debe tener cinco Modelos de carro": true,
+				"Cada modelo debe tener id, name & image": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Debe tener cinco paginas": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Debe tener cinco Modelos de carro": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Cada modelo debe tener id, name & image": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4029
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": false,
+					"Debe tener cinco paginas": true,
+					"Debe tener cinco Modelos de carro": true,
+					"Cada modelo debe tener id, name & image": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 4029,
+	"collection": {
+		"requests": [
+			{
+				"id": "63d9047e-d898-4d5e-bd89-257a6ff8b90e",
+				"method": "GET"
+			}
+		]
+	}
+}

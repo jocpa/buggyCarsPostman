@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "c51f1728-9853-4431-ba26-844fe6a5041d",
+		"name": "BuggyCars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25854527"
+	},
+	"item": [
+		{
+			"name": "Prueba de carros",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"\r",
+							"const response = pm.response.json()\r",
+							"console.log(pm.response.text())\r",
+							"console.log(response.totalPages)\r",
+							"console.log(response.models[0])\r",
+							"\r",
+							"pm.test(\"Debe tener cinco paginas\", () => {\r",
+							"    pm.expect(response.totalPages).to.eql(5)\r",
+							"})\r",
+							"pm.test(\"Debe tener cinco Modelos de carro\", () => {\r",
+							"    pm.expect(response.models.length).to.eql(5)\r",
+							"})\r",
+							"pm.test(\"Cada modelo debe tener id, name & image\", () => {\r",
+							"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"name\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"image\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://k51qryqov3.execute-api.ap-southeast-2.amazonaws.com/prod/models?page=1",
+					"protocol": "https",
+					"host": [
+						"k51qryqov3",
+						"execute-api",
+						"ap-southeast-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"models"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
